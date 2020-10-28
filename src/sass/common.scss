@@ -1,0 +1,301 @@
+/*!
+common setting
+*/
+
+/*--------------------------------------------------------------
+# mediaQueries
+--------------------------------------------------------------*/
+$page-max-width: 1240px;
+$page-min-width: 320px;
+//$page-breakpoint: 768px;
+$page-breakpoint: 868px;
+
+$screen-case: (
+  pc: screen and
+    (
+      min-width: #{$page-breakpoint},
+    ),
+  sp: screen and
+    (
+      max-width: #{$page-breakpoint - 1},
+    ),
+) !default;
+
+@mixin mq($screen-key) {
+  @media #{map-get($screen-case, $screen-key)} {
+    @content;
+  }
+}
+
+@include mq(pc) {
+  .only-sp {
+    display: none !important;
+  }
+}
+@include mq(sp) {
+  .only-pc {
+    display: none !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Color
+--------------------------------------------------------------*/
+$text: #333;
+$link: #0366d6;
+$visited: #660099;
+$hover: #0366d6;
+$active: #cc3434;
+
+/*--------------------------------------------------------------
+# Font
+--------------------------------------------------------------*/
+$fs-s: 1.4rem;
+$fs-m: 1.6rem;
+$fs-l: 1.8rem;
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: $fs-m;
+  line-height: 1.6;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue",
+    HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック Medium",
+    "Yu Gothic Medium", "游ゴシック", "Yu Gothic", Verdana, "メイリオ", Meiryo,
+    sans-serif;
+}
+
+/* IE11だけに適応 */
+_:lang(x)::-ms-backdrop,
+body {
+  font-family: "Segoe UI", "メイリオ", Meiryo, sans-serif;
+}
+
+@mixin bold() {
+  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue",
+    HelveticaNeue, "Segoe UI", "游ゴシック体", YuGothic, "游ゴシック",
+    "Yu Gothic", Verdana, "メイリオ", Meiryo, sans-serif;
+}
+
+.fs {
+  &-s {
+    font-size: $fs-s !important;
+  }
+  &-m {
+    font-size: $fs-m !important;
+  }
+  &-l {
+    font-size: $fs-l !important;
+  }
+}
+
+.normal {
+  font-weight: normal !important;
+}
+b,
+.bold {
+  font-weight: bold !important;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue",
+    HelveticaNeue, "Segoe UI", "游ゴシック体", YuGothic, "游ゴシック",
+    "Yu Gothic", Verdana, "メイリオ", Meiryo, sans-serif;
+}
+.left {
+  text-align: left !important;
+}
+.center {
+  text-align: center !important;
+}
+.right {
+  text-align: right !important;
+}
+
+/*--------------------------------------------------------------
+# Link
+--------------------------------------------------------------*/
+a {
+  color: $link;
+  text-decoration: none;
+  &:link {
+    color: $link;
+  }
+  &:visited {
+    color: $visited;
+  }
+  &:hover {
+    color: $hover;
+    text-decoration: underline;
+  }
+  &:active {
+    color: $active;
+  }
+}
+
+/*--------------------------------------------------------------
+# Section
+--------------------------------------------------------------*/
+.sec {
+  &-lv2 {
+    width: 100%;
+    margin: 65px auto 80px;
+    padding: 0 3.73%;
+  }
+  &-lv3 {
+    width: 100%;
+    margin: 50px auto 80px;
+  }
+  &-lv4 {
+    width: 100%;
+    margin: 40px auto;
+  }
+  &-wrap {
+    width: 100%;
+    max-width: $page-max-width;
+    min-width: $page-min-width;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hedding
+--------------------------------------------------------------*/
+.tit {
+  &-lv1 {
+    font-size: 5rem;
+    text-align: center;
+    margin: 2em 0;
+  }
+  &-lv2 {
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+  &-lv3 {
+    font-size: 2.2rem;
+    text-align: left;
+    padding: 0.2em 1em;
+    background-color: #efefef;
+    margin-bottom: 2em;
+    @include bold();
+  }
+  &-lv4 {
+    font-size: 2rem;
+    text-align: left;
+    padding: 0.2em 0;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 1.6em;
+  }
+}
+
+/*--------------------------------------------------------------
+# Text
+--------------------------------------------------------------*/
+p {
+  color: $text;
+  margin-top: 1.2em;
+}
+
+.txt {
+  &-lead {
+    &-lv2 {
+      font-size: 2.4rem;
+      text-align: center;
+    }
+    &-lv3 {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+  }
+}
+
+.copy {
+  font-size: $fs-s;
+  text-align: center;
+  color: #666;
+}
+
+/*--------------------------------------------------------------
+# Image
+--------------------------------------------------------------*/
+img {
+  vertical-align: bottom;
+}
+
+figure.img {
+  display: inline-block;
+
+  > img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+
+    &.shell {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# List
+--------------------------------------------------------------*/
+.list {
+  margin-top: 1.2em;
+
+  &-dots {
+    @extend .list;
+    > li {
+      margin-left: 1.4em;
+
+      &::before {
+        content: "\30fb";
+        float: left;
+        margin-left: -1.4em;
+      }
+    }
+  }
+
+  &-type {
+    @extend .list;
+    > li {
+      &::before {
+        content: attr(data-type);
+        float: left;
+        margin-right: 0.25em;
+      }
+    }
+  }
+
+  &-notice {
+    @extend .list;
+    > li {
+      font-size: $fs-s;
+      color: #999;
+      margin-left: 1.5em;
+
+      &::before {
+        content: "\203b";
+        float: left;
+        margin-left: -1.5em;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# form
+--------------------------------------------------------------*/
+button:focus {
+  outline: none;
+}

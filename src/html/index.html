@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta charset="UTF-8" />
+    <title>module</title>
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <script type="text/javascript" src="./js/main.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <meta name="msapplication-TileImage" content="./apple-touch-icon.png" />
+  </head>
+  <body>
+    <header>
+      <h1 class="tit-lv1"><a href="./">Module</a></h1>
+    </header>
+
+    <main>
+      <section class="sec-lv2">
+        <h2 class="tit-lv2">H2タイトル（.tit-lv2）</h2>
+        <p class="txt-lead-lv2">H2リード文（.txt-lead-lv2）</p>
+
+        <section class="sec-lv3">
+          <h3 class="tit-lv3">H3タイトル（.tit-lv3）</h3>
+          <p class="txt-lead-lv3">H3リード文（.txt-lead-lv3）</p>
+
+          <section class="sec-lv4">
+            <h4 class="tit-lv4">H4タイトル（.tit-lv4）</h4>
+          </section>
+          <!-- /.sec-lv4 -->
+        </section>
+        <!-- /.sec-lv3 -->
+
+        <section class="sec-lv3">
+          <h3 class="tit-lv3">汎用設定など</h3>
+          <p>記事中とかでも使えるやつ</p>
+
+          <section class="sec-lv4">
+            <h4 class="tit-lv4">テキスト関連</h4>
+
+            <p>
+              &lt;p&gt;タグのみで使った場合フォントサイズ14px、margin-top16.8px（大体1行分）<br />
+              記事中最初の&lt;p&gt;のみmargin-topが0
+            </p>
+            <p class="fs-s">.fs-s を追加するとフォントサイズ12px</p>
+            <p class="fs-m">.fs-m を追加するとフォントサイズ14px</p>
+            <p class="fs-l">.fs-l を追加するとフォントサイズ16px</p>
+            <p class="bold">.bold もしくは&lt;b&gt;で太字</p>
+            <p class="bold">
+              太字解除するときは <span class="normal">.normal</span>
+            </p>
+          </section>
+          <!-- /.sec-lv4 -->
+
+          <section class="sec-lv4">
+            <h4 class="tit-lv4">配置関連</h4>
+
+            <p class="left">.left で左揃え</p>
+            <p class="center">.center で中央揃え</p>
+            <p class="right">.right で右揃え</p>
+          </section>
+          <!-- /.sec-lv4 -->
+
+          <section class="sec-lv4">
+            <h4 class="tit-lv4">リスト関連</h4>
+
+            <ul class="list">
+              <li>.list</li>
+              <li>マーカなしのリスト</li>
+            </ul>
+            <!-- /.list -->
+
+            <ul class="list-dots">
+              <li>.list-dots</li>
+              <li>黒点マーカーのリスト</li>
+            </ul>
+            <!-- /.list-dots -->
+
+            <ul class="list-type">
+              <li data-type="★">.list-type</li>
+              <li data-type="▼">マーカーを自由に指定するリスト</li>
+            </ul>
+            <!-- /.list -->
+
+            <ol class="list-type">
+              <li data-type="①">.list-type</li>
+              <li data-type="②">順序付きリストとしても使える</li>
+            </ol>
+            <!-- /.list -->
+
+            <ul class="list-notice">
+              <li>.list-notice</li>
+              <li>注釈のリスト</li>
+            </ul>
+            <!-- /.list-notice -->
+          </section>
+          <!-- /.sec-lv4 -->
+
+          <section class="sec-lv4">
+            <h4 class="tit-lv4">画像関連</h4>
+
+            <figure class="img shell">
+              <img src="https://placehold.jp/150x150.png" alt="" />
+            </figure>
+
+            <p>
+              &lt;figure class="img shell"&gt;<br />figure.imgで囲むと画像の実寸～100%の間でストレッチする。<br />
+              .shellを追加すると画像の上に透明なボックスが乗るので気休め程度に画像の保存がしにくくなる。
+            </p>
+          </section>
+          <!-- /.sec-lv4 -->
+
+          <section class="sec-lv4">
+            <h4 class="tit-lv4">アイコン</h4>
+
+            <ul class="list-feature">
+              <li>
+                <figure class="img">
+                  <img src="/images/icon_plan.svg" alt="" />
+                  <figcaption>設計</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="img">
+                  <img src="/images/icon_code.svg" alt="" />
+                  <figcaption>制作</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="img">
+                  <img src="/images/icon_run.svg" alt="" />
+                  <figcaption>運用</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </section>
+          <!-- /.sec-lv4 -->
+        </section>
+        <!-- /.sec-lv3 -->
+      </section>
+      <!-- /.sec-lv2 -->
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

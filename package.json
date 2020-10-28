@@ -1,0 +1,65 @@
+{
+  "name": "owlstarter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean/css": "rimraf dist/css && mkdirp dist/css",
+    "clean/js": "rimraf dist/js && mkdirp dist/js",
+    "clean/images": "rimraf dist/images && mkdirp dist/images",
+    "html/plain": "cpx src/html/**/*.html dist && cpx src/html/**/*.php dist",
+    "html": "npm-run-all html/*",
+    "css/sass": "node-sass src/sass/style.scss -o dist/css --output-style expanded",
+    "css/postcss": "postcss dist/css/style.css -o dist/css/style.min.css",
+    "css": "npm run clean/css && npm-run-all -s css/*",
+    "js/rollup": "rollup src/js/main.js -c=rollup.config.js",
+    "js/uglifyjs": "uglifyjs dist/js/main.js -o dist/js/main.min.js",
+    "js": "npm run clean/js && npm-run-all -s js/*",
+    "//images/imagemin": "node imagemin.js",
+    "images/plain": "cpx src/images/**/*.{jpg,png,gif,svg} dist/images",
+    "images": "npm run clean/images && npm-run-all -s images/*",
+    "watch/server": "browser-sync start -s dist -f \"*.html, *.css, *.js\"",
+    "watch/html": "watch \"npm run html\" ./src/html",
+    "watch/css": "watch \"npm run css\" ./src/sass",
+    "watch/js": "watch \"npm run js\" ./src/js",
+    "watch/images": "onchange \"src/images\" -e \"**/*.DS_Store\" -- npm run images",
+    "watch": "npm-run-all -p watch/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toonego/owlstarter.git"
+  },
+  "author": "morishio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toonego/owlstarter/issues"
+  },
+  "homepage": "https://github.com/toonego/owlstarter#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.13",
+    "cpx": "^1.5.0",
+    "cssnano": "^4.1.10",
+    "imagemin": "^7.0.1",
+    "imagemin-gifsicle": "^6.0.1",
+    "imagemin-keep-folder": "^5.3.2",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "imagemin-svgo": "^7.1.0",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^6.1.1",
+    "postcss-cli": "^6.1.3",
+    "rollup": "^1.32.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "uglify-js": "^3.11.4",
+    "watch": "^1.0.2"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
