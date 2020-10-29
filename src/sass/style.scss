@@ -4,3 +4,170 @@
 /*--------------------------------------------------------------
 # index
 --------------------------------------------------------------*/
+.required {
+  color: red;
+  padding: 0 0.5em 0 0;
+  font-weight: normal;
+}
+
+.tit-lv2 {
+  text-align: left;
+  margin: 1em 0;
+}
+.tit-lv3 {
+  text-align: left;
+  margin: 1em 0 0;
+  padding: 0;
+
+  & + p {
+    margin: 0;
+  }
+}
+
+.sec-lv2 {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 1em 1.6em;
+  background-color: #eee;
+}
+
+.list-comment-item {
+  background-color: white;
+  margin: 1em 0;
+  padding: 1em 2em 2em;
+}
+
+.list-form {
+  dt {
+    font-weight: bold;
+    margin-top: 1em;
+  }
+  dd {
+    > input {
+      width: 100%;
+      font-size: $fs-m;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.8em 0.6em 0.6em;
+
+      &[type="text"] {
+        width: 100%;
+        max-width: 400px;
+      }
+      &[type="email"] {
+        width: 100%;
+        max-width: 400px;
+      }
+      &[type="url"] {
+        width: 100%;
+        max-width: 400px;
+      }
+      &:focus {
+        background-color: #f5f3e0;
+      }
+    }
+    > textarea {
+      font-size: $fs-m;
+      resize: vertical;
+      width: 100%;
+      height: 10em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1.2em;
+      padding: 0.8em 0.6em 0.6em;
+      &:focus {
+        background-color: #f5f3e0;
+      }
+    }
+
+    &.error {
+      > input,
+      > textarea {
+        border: 1px solid red !important;
+      }
+      &.email::after {
+        content: ("メールアドレスが正しくありません。");
+        display: block;
+        color: red;
+        font-size: $fs-s;
+      }
+      &.empty::after {
+        content: ("入力が必要です。");
+        display: block;
+        color: red;
+        font-size: $fs-s;
+      }
+    }
+  }
+}
+
+button {
+  font-size: $fs-l;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition-duration: 0.5s;
+
+  &:disabled {
+    opacity: 0.6;
+  }
+
+  &:enabled:hover {
+    background-color: #fff;
+  }
+}
+
+.sec-ad-bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+  height: 60px;
+}
+
+.list-ad-item {
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+  height: 60px;
+
+  &-current {
+    @extend .list-ad-item;
+    background-color: #333;
+    color: beige;
+    z-index: 3;
+
+    .js-timer-current {
+      column-rule-color: gold;
+    }
+  }
+
+  &-cd {
+    @extend .list-ad-item;
+    background-color: beige;
+    color: #333;
+    z-index: 2;
+
+    .js-timer-cd {
+      color: brown;
+      font-size: larger;
+      font-weight: bold;
+    }
+  }
+
+  &-link {
+    @extend .list-ad-item;
+    background-color: #333;
+    color: beige;
+    z-index: 1;
+
+    a {
+      color: $link;
+      font-size: larger;
+      font-weight: bold;
+    }
+  }
+}

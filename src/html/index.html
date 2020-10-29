@@ -5,8 +5,9 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta charset="UTF-8" />
-    <title>module</title>
+    <title>Demo</title>
     <link rel="stylesheet" href="./css/style.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="./js/main.min.js"></script>
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <link
@@ -18,135 +19,49 @@
   </head>
   <body>
     <header>
-      <h1 class="tit-lv1"><a href="./">Module</a></h1>
+      <h1 class="tit-lv1">Demo</h1>
     </header>
 
     <main>
       <section class="sec-lv2">
-        <h2 class="tit-lv2">H2タイトル（.tit-lv2）</h2>
-        <p class="txt-lead-lv2">H2リード文（.txt-lead-lv2）</p>
+        <h2 class="tit-lv2">〇件のコメント</h2>
 
-        <section class="sec-lv3">
-          <h3 class="tit-lv3">H3タイトル（.tit-lv3）</h3>
-          <p class="txt-lead-lv3">H3リード文（.txt-lead-lv3）</p>
+        <div class="list-comment">
+          <div class="list-comment-item">
+            <p class="name">〇〇〇〇 より：</p>
+            <p class="comment">サンプル</p>
+          </div>
+        </div>
 
-          <section class="sec-lv4">
-            <h4 class="tit-lv4">H4タイトル（.tit-lv4）</h4>
-          </section>
-          <!-- /.sec-lv4 -->
-        </section>
-        <!-- /.sec-lv3 -->
+        <h3 class="tit-lv3">コメントを残す</h3>
+        <p>メールアドレスが公開されることはありません。<br><em class="required">*</em>がついている欄は必須項目です。</p>
 
-        <section class="sec-lv3">
-          <h3 class="tit-lv3">汎用設定など</h3>
-          <p>記事中とかでも使えるやつ</p>
+        <form id="js-comment">
+          <dl class="list-form">
+            <dt>コメント<em class="required">*</em></dt>
+            <dd><textarea id="form-comment" name="comment" maxlength="5000" placeholder="コメント" required></textarea></dd>
+            <dt>名前<em class="required">*</em></dt>
+            <dd><input id="form-name" type="text" name="name" placeholder="名前" required /></dd>
+            <dt>メールアドレス<em class="required">*</em></dt>
+            <dd><input id="form-email" type="email" name="email" placeholder="メールアドレス" required /></dd>
+            <dt>WEBサイト</dt>
+            <dd><input id="form-url" type="url" name="url" placeholder="WEBサイト" /></dd>
+          </dl>
+          <button type="button" class="confirm" disabled>コメントを送信</button>
+        </form>
 
-          <section class="sec-lv4">
-            <h4 class="tit-lv4">テキスト関連</h4>
-
-            <p>
-              &lt;p&gt;タグのみで使った場合フォントサイズ14px、margin-top16.8px（大体1行分）<br />
-              記事中最初の&lt;p&gt;のみmargin-topが0
-            </p>
-            <p class="fs-s">.fs-s を追加するとフォントサイズ12px</p>
-            <p class="fs-m">.fs-m を追加するとフォントサイズ14px</p>
-            <p class="fs-l">.fs-l を追加するとフォントサイズ16px</p>
-            <p class="bold">.bold もしくは&lt;b&gt;で太字</p>
-            <p class="bold">
-              太字解除するときは <span class="normal">.normal</span>
-            </p>
-          </section>
-          <!-- /.sec-lv4 -->
-
-          <section class="sec-lv4">
-            <h4 class="tit-lv4">配置関連</h4>
-
-            <p class="left">.left で左揃え</p>
-            <p class="center">.center で中央揃え</p>
-            <p class="right">.right で右揃え</p>
-          </section>
-          <!-- /.sec-lv4 -->
-
-          <section class="sec-lv4">
-            <h4 class="tit-lv4">リスト関連</h4>
-
-            <ul class="list">
-              <li>.list</li>
-              <li>マーカなしのリスト</li>
-            </ul>
-            <!-- /.list -->
-
-            <ul class="list-dots">
-              <li>.list-dots</li>
-              <li>黒点マーカーのリスト</li>
-            </ul>
-            <!-- /.list-dots -->
-
-            <ul class="list-type">
-              <li data-type="★">.list-type</li>
-              <li data-type="▼">マーカーを自由に指定するリスト</li>
-            </ul>
-            <!-- /.list -->
-
-            <ol class="list-type">
-              <li data-type="①">.list-type</li>
-              <li data-type="②">順序付きリストとしても使える</li>
-            </ol>
-            <!-- /.list -->
-
-            <ul class="list-notice">
-              <li>.list-notice</li>
-              <li>注釈のリスト</li>
-            </ul>
-            <!-- /.list-notice -->
-          </section>
-          <!-- /.sec-lv4 -->
-
-          <section class="sec-lv4">
-            <h4 class="tit-lv4">画像関連</h4>
-
-            <figure class="img shell">
-              <img src="https://placehold.jp/150x150.png" alt="" />
-            </figure>
-
-            <p>
-              &lt;figure class="img shell"&gt;<br />figure.imgで囲むと画像の実寸～100%の間でストレッチする。<br />
-              .shellを追加すると画像の上に透明なボックスが乗るので気休め程度に画像の保存がしにくくなる。
-            </p>
-          </section>
-          <!-- /.sec-lv4 -->
-
-          <section class="sec-lv4">
-            <h4 class="tit-lv4">アイコン</h4>
-
-            <ul class="list-feature">
-              <li>
-                <figure class="img">
-                  <img src="/images/icon_plan.svg" alt="" />
-                  <figcaption>設計</figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure class="img">
-                  <img src="/images/icon_code.svg" alt="" />
-                  <figcaption>制作</figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure class="img">
-                  <img src="/images/icon_run.svg" alt="" />
-                  <figcaption>運用</figcaption>
-                </figure>
-              </li>
-            </ul>
-          </section>
-          <!-- /.sec-lv4 -->
-        </section>
-        <!-- /.sec-lv3 -->
       </section>
       <!-- /.sec-lv2 -->
     </main>
 
-    <footer></footer>
+    <footer>
+      <div class="sec-ad-bottom">
+        <ul class="list-ad js-adlist">
+          <li class="list-ad-item-current"><span class="js-timer-current"></span>あなたの他に<span class="js-num-people">0</span>人が見ています</li>
+          <li class="list-ad-item-cd">キャンペーン終了まで<span class="js-timer-cd"></span></li>
+          <li class="list-ad-item-link">お得に購入できる特設ページは<a href="">こちら</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
